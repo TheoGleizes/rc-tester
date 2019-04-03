@@ -12,9 +12,9 @@ RCSwitch transmitter = RCSwitch();
 void setup() 
 {
   Serial.begin(9600);
-  receiver.enableReceive(0);  // Receiver input on interrupt 0 (D2)
+  receiver.enableReceive(0);
   transmitter.enableTransmit(10);
-  pinMode(13, OUTPUT); // D13 as output- Optional
+  pinMode(13, OUTPUT);
   digitalWrite(13, HIGH);
   Serial.print("Beginning ");
 }
@@ -34,7 +34,6 @@ void loop()
     Serial.print("Protocol: ");
     Serial.println( receiver.getReceivedProtocol() );
 
-    //digitalWrite(13, LOW);
     receiver.resetAvailable();
   }
   //delay(1000);
